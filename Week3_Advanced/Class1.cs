@@ -1,6 +1,5 @@
 ﻿// File: Week3_Advanced/Program.cs
 // Description: Mastering LINQ for data filtering and sorting.
-// Professional Comments: English
 
 using System;
 using System.Collections.Generic;

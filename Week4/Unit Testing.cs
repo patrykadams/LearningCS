@@ -1,8 +1,22 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Week2_OOP;
 
-public class Class1
+namespace MasterclassTests
 {
-	public Class1()
-	{
-	}
+    [TestClass]
+    public class BankAccountTests
+    {
+        [TestMethod]
+        public void Withdraw_ValidAmount_DecreasesBalance()
+        {
+            // Arrange
+            var account = new BankAccount("Patryk", 100m);
+
+            // Act
+            account.Withdraw(40m);
+
+            // Assert
+            Assert.AreEqual(60m, account.GetBalance());
+        }
+    }
 }
