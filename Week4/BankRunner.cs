@@ -25,8 +25,9 @@ namespace CSharp_Masterclass
                     // Manually throwing an error for bad logic
                     throw new ArgumentException("Amount must be a positive number.");
                 }
-
-                myAccount.Withdraw(amount);
+                // NEW: Log the success
+                JsonTransactionLogger.SaveTransaction(myAccount.Owner, "Withdrawal", amount);
+                Console.WriteLine("Transaction saved to JSON successfully.");
             }
             catch (FormatException)
             {
@@ -45,6 +46,7 @@ namespace CSharp_Masterclass
             {
                 Console.WriteLine("\nTransaction process complete. Have a nice day!");
             }
+            TransactionLogger.ViewLogs();
 
             Console.ReadKey();
         }
